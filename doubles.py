@@ -37,8 +37,11 @@ def count_double_numpy(val: str):
 
 
 # Benchmark it
-# generate 50M of random letters to test it
-val = "".join(random.choice(string.ascii_letters) for i in range(50_000_000))
+# generate random letters to test it
+x = 8_000_000
+val = "".join(random.choice(string.ascii_letters) for _ in range(x))
+# val = 'A' * x
+# val = 'AB' * (x//2)
 
 
 def test_python_zip(benchmark: BenchmarkFixture):
